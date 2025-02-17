@@ -1,0 +1,12 @@
+services:
+  prediction-app:
+    image: prediction-app:latest
+    build:
+      context: .
+      target: builder
+    container_name: prediction-app
+    env_file:
+      - .env
+    volumes:
+      - ./input:/astrazeneca/input
+      - ./output:/astrazeneca/output
